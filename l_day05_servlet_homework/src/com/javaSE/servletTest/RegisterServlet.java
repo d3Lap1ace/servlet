@@ -1,6 +1,7 @@
 package com.javaSE.servletTest;
 
 import com.javaSE.utils.JDBCUtil;
+import com.javaSE.utils.MD5Util;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -8,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.security.interfaces.RSAKey;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -32,7 +34,12 @@ public class RegisterServlet extends HttpServlet {
         //2. 获取请求参数 (username userPwd)
         String username = req.getParameter("username");
         String userPwd = req.getParameter("userPwd");
-
+        
+        // 使用md5加密
+        userPwd = MD5Util.encrypt(userPwd);
+        System.out.println("userPwd = " + userPwd);
+        
+        
         //3. 数据库的crud
         Connection connection = JDBCUtil.getConnection();
         String sql = "insert into sys_user (username,user_pwd) values(?,?)";
