@@ -1,5 +1,6 @@
 package com.javaee.service.impl;
 
+import com.javaee.dao.UserDao;
 import com.javaee.dao.impl.UserDaoImpl;
 import com.javaee.pojo.SysUser;
 import com.javaee.service.UserService;
@@ -37,7 +38,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean register(String username, String password) {
         password = MD5Util.encrypt(password);                       // md5加密
-        UserDaoImpl userDao = new UserDaoImpl();                    // new用户
+        UserDao userDao = new UserDaoImpl();                    // new用户
         int rows = userDao.insertSysUser(username, password);       // 执行用户插入语句
         return rows > 0;                                            // 返回结果
     }

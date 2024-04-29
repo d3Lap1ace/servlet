@@ -1,7 +1,9 @@
 package com.javaee.controller;
 
+import com.javaee.pojo.SysUser;
 import com.javaee.service.UserService;
 import com.javaee.service.lmpl.UserServiceimpl;
+import com.javaee.utils.MD5Util;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,20 +27,29 @@ public class UserLoginController extends HttpServlet {
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html:charset=utf-8");
+        resp.setContentType("text/html;charset=utf-8");
 
         String username = req.getParameter("username");
         String userPwd = req.getParameter("userPwd");
 
         UserService userService = new UserServiceimpl();
-        int flag = userService.login(username, userPwd);
+        SysUser sysUser = userService.login(username, userPwd);
 
-        if (flag == 0){
-            req.getRequestDispatcher("/showSchedule.html").forward(req,resp);
-        }else if (flag == 1){
+
+        if(sysUser == null){
             req.getRequestDispatcher("/loginUsernameError.html").forward(req,resp);
-        }else if (flag == 2){
-            req.getRequestDispatcher("/loginUserPwdError.html").forward(req,resp);
         }
+        //1.参数接收和处理
+        userPwd = MD5Util.encrypt(userPwd);
+        if (!sysUser.getUserPwd().equals(userPwd)){
+            req.getRequestDispatcher("/loginUserPwdError.html").forward(req,resp);
+            return;
+        }
+
+        //保存下用户信息
+        //传入账号和密码 username password 登录成功证明,他俩是对的! 把他们俩存起来是不是就可以啦!!
+        req.getSession().setAttribute("user",sysUser);
+        //todo 查询学习计划的controller
+        req.getRequestDispatcher("/schedule/show").forward(req,resp);
     }
 }

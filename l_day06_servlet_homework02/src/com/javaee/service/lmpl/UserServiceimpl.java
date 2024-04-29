@@ -18,17 +18,11 @@ import com.javaee.utils.MD5Util;
 
 public class UserServiceimpl implements UserService {
     @Override
-    public int login(String username, String password) {
-        password = MD5Util.encrypt(password);
+    public SysUser login(String username, String password) {
+//        password = MD5Util.encrypt(password);
         UserDaoImpl userDao = new UserDaoImpl();
         SysUser sysUser = userDao.queryByUserName(username);
-        if(sysUser == null){
-            return 1;
-        }
-        if(!(sysUser.getUserPwd().equals(password))){
-            return 2;
-        }
-        return 0;
+        return sysUser;
     }
 
     @Override

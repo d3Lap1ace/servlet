@@ -1,5 +1,7 @@
 package com.javaee.service;
 
+import com.javaee.pojo.SysUser;
+
 /**
  * @classname javawedTest
  * @Auther d3Lap1ace
@@ -9,7 +11,7 @@ package com.javaee.service;
  * From the Laplace Demon
  */
 public interface UserService {
-    int login(String username,String password);
+    SysUser login(String username, String password);
 
     boolean register(String username,String password);
 }

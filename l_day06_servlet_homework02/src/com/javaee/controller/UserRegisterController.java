@@ -24,13 +24,15 @@ public class UserRegisterController extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html:charset=utf-8");
+        resp.setContentType("text/html;charset=utf-8");
 
         String username = req.getParameter("username");
         String userPwd = req.getParameter("userPwd");
 
         UserService userService = new UserServiceimpl();
+        userService.register(username, userPwd);
         boolean is = userService.register(username, userPwd);
 
 

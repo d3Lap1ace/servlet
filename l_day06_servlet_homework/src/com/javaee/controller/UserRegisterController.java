@@ -1,5 +1,6 @@
 package com.javaee.controller;
 
+import com.javaee.service.UserService;
 import com.javaee.service.impl.UserServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,7 +30,7 @@ public class UserRegisterController extends HttpServlet {
         String username = req.getParameter("username");
         String passPwd = req.getParameter("userPwd");
 
-        UserServiceImpl userService = new UserServiceImpl();
+        UserService userService = new UserServiceImpl();
         boolean is = userService.register(username, passPwd);
         if (is){
             //成功
