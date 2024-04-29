@@ -9,10 +9,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/../l_javawed_day04/web" relative="/" />
         </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/../l_javawed_day04/resources" />
-          <root url="file://$MODULE_DIR$/../l_javawed_day04/src" />
-        </sourceRoots>
+        <sourceRoots />
       </configuration>
     </facet>
   </component>

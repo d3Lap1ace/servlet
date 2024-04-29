@@ -10,8 +10,12 @@
       <module fileurl="file://$PROJECT_DIR$/l_day05_servlet_homework2/l_day05_servlet_homework2.iml" filepath="$PROJECT_DIR$/l_day05_servlet_homework2/l_day05_servlet_homework2.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day06_cookie_01/l_day06_cookie_01.iml" filepath="$PROJECT_DIR$/l_day06_cookie_01/l_day06_cookie_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day06_servlet_01/l_day06_servlet_01.iml" filepath="$PROJECT_DIR$/l_day06_servlet_01/l_day06_servlet_01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/l_day06_servlet_homework/l_day06_servlet_homework.iml" filepath="$PROJECT_DIR$/l_day06_servlet_homework/l_day06_servlet_homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/l_day06_servlet_homework01/l_day06_servlet_homework01.iml" filepath="$PROJECT_DIR$/l_day06_servlet_homework01/l_day06_servlet_homework01.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day06_servlet_homework02/l_day06_servlet_homework02.iml" filepath="$PROJECT_DIR$/l_day06_servlet_homework02/l_day06_servlet_homework02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/l_day07_filter_01/l_day07_filter_01.iml" filepath="$PROJECT_DIR$/l_day07_filter_01/l_day07_filter_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/l_day07_servlet_filter_01/l_day07_servlet_filter_01.iml" filepath="$PROJECT_DIR$/l_day07_servlet_filter_01/l_day07_servlet_filter_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/l_day07_servlet_jsp_01/l_day07_servlet_jsp_01.iml" filepath="$PROJECT_DIR$/l_day07_servlet_jsp_01/l_day07_servlet_jsp_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/l_day07_servlet_requset_response/l_day07_servlet_requset_response.iml" filepath="$PROJECT_DIR$/l_day07_servlet_requset_response/l_day07_servlet_requset_response.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day07_session_01/l_day07_session_01.iml" filepath="$PROJECT_DIR$/l_day07_session_01/l_day07_session_01.iml" />
     </modules>
   </component>

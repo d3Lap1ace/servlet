@@ -50,6 +50,6 @@ public class UserLoginController extends HttpServlet {
         //传入账号和密码 username password 登录成功证明,他俩是对的! 把他们俩存起来是不是就可以啦!!
         req.getSession().setAttribute("user",sysUser);
         //todo 查询学习计划的controller
-        req.getRequestDispatcher("/schedule/show").forward(req,resp);
+        req.getRequestDispatcher("/show").forward(req,resp);
     }
 }

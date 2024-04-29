@@ -21,7 +21,7 @@ import java.util.List;
  * From the Laplace Demon
  */
 
-@WebServlet("/schedule/show")   //能否换成其他的
+@WebServlet("/show")
 public class ScheduleShowController extends HttpServlet {
 
     @Override
@@ -36,7 +36,7 @@ public class ScheduleShowController extends HttpServlet {
         List<SysSchedule> sysSchedules = scheduleService.showList(sysUser.getUid());
         //4. 响应结果( 字符串 | 字节文件 | html[转发|重定向])
         req.setAttribute("sysSchedules",sysSchedules);
-        req.getRequestDispatcher("/showSchedule.html").forward(req,resp);
+        req.getRequestDispatcher("/showSchedule.jsp").forward(req,resp);
     }
 
 }
