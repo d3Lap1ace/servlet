@@ -22,4 +22,22 @@ public class ScheduleServiceImpl  implements ScheduleService {
         List<SysSchedule> sysSchedules = scheduleDao.queryList(uid);
         return sysSchedules;
     }
+
+    @Override
+    public void addSchedule(String title, Integer uid) {
+        ScheduleDaoImpl scheduleDao = new ScheduleDaoImpl();
+        scheduleDao.insertSchedule(title,uid);
+    }
+
+    @Override
+    public void delSchedule(Integer sid) {
+        ScheduleDaoImpl scheduleDao = new ScheduleDaoImpl();
+        scheduleDao.deleteById(sid);
+    }
+
+    @Override
+    public void updateSchedule(String uid, String title, Integer completed) {
+        ScheduleDaoImpl scheduleDao = new ScheduleDaoImpl();
+        scheduleDao.updataSchedule(uid,title,completed);
+    }
 }

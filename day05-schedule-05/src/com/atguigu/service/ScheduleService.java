@@ -14,4 +14,9 @@ public interface ScheduleService {
 
     List<SysSchedule> showList(Integer uid);
 
+    void addSchedule(String title, Integer uid);
+
+    void delSchedule(Integer sid);
+
+    void updateSchedule(String uid, String title, Integer completed);
 }
