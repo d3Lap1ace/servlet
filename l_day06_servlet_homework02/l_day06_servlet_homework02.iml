@@ -26,5 +26,6 @@
     <orderEntry type="library" name="lombok-1.18.24" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.13.2" level="project" />
   </component>
 </module>

@@ -32,4 +32,10 @@ public class UserServiceimpl implements UserService {
         int rows = userDao.insertSysUser(username, password);
         return rows >0;
     }
+    @Override
+    public boolean check(String username) {
+        UserDao userDao = new UserDaoImpl();
+        int count = userDao.queryUserNameCount(username);
+        return count==0;
+    }
 }

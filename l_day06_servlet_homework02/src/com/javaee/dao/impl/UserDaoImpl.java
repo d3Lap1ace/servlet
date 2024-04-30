@@ -30,4 +30,10 @@ public class UserDaoImpl extends BaseDao implements UserDao {
         int rows = baseUpdate(sql, username, userPwd);
         return rows;
     }
+
+    @Override
+    public int queryUserNameCount(String username) {
+        String sql = "select count(*) from sys_user where username = ? ;";
+        return  baseQueryObject(Long.class,sql,username).intValue();
+    }
 }

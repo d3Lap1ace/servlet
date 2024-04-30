@@ -14,4 +14,6 @@ public interface UserService {
     SysUser login(String username, String password);
 
     boolean register(String username,String password);
+
+    boolean check(String username);
 }

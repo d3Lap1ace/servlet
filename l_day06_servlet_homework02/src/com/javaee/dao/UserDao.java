@@ -13,4 +13,6 @@ import com.javaee.pojo.SysUser;
 public interface UserDao {
     SysUser queryByUserName(String username);
     int insertSysUser(String username,String userPwd);
+
+    int queryUserNameCount(String username);
 }

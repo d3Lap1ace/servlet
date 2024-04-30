@@ -27,8 +27,7 @@ public class ScheduleShowController extends HttpServlet {
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //1. 设置编码格式 request  response
-        req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html;charset=utf-8");
+
         //2. 获取请求参数
         SysUser sysUser = (SysUser) req.getSession().getAttribute("user");
         //3. 调用业务层
