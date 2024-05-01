@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="gbk">
     <title>Title</title>
     <style>
 
         .ht{
             text-align: center;
             color: cadetblue;
-            font-family: å¹¼åœ†;
+            font-family: Ó×Ô²;
         }
         .tab{
             width: 500px;
             border: 5px solid cadetblue;
             margin: 0px auto;
             border-radius: 5px;
-            font-family: å¹¼åœ†;
+            font-family: Ó×Ô²;
         }
         .ltr td{
             border: 1px solid  powderblue;
@@ -45,30 +45,30 @@
 
     <script>
 
-        // æ ¡éªŒç”¨æˆ·åçš„æ–¹æ³•
+        // Ğ£ÑéÓÃ»§ÃûµÄ·½·¨
         function checkUsername(){
-            // å®šä¹‰æ­£åˆ™
+            // ¶¨ÒåÕıÔò
             var usernameReg=/^[a-zA-Z0-9]{5,10}$/
             var username =document.getElementById("usernameInput").value
             var usernameMsgSpan =document.getElementById("usernameMsg")
             if(!usernameReg.test(username)){
-                usernameMsgSpan.innerText="ä¸åˆæ³•"
+                usernameMsgSpan.innerText="²»ºÏ·¨"
                 return false
             }
 
-            // url  /check?username=è¾“å…¥çš„username get
+            // url  /check?username=ÊäÈëµÄusername get
             var ajax = new XMLHttpRequest();
             ajax.onreadystatechange = function (){
                 if (ajax.readyState == 4 &&  ajax.status ==200){
-                    //ä¿ç•™
+                    //±£Áô
                    var jsonStr = ajax.responseText;
                    var result = JSON.parse(jsonStr);
                    if (result.code == 200){
-                       usernameMsgSpan.innerText="æ£€æŸ¥åå°åå¯ä»¥ä½¿ç”¨!"
+                       usernameMsgSpan.innerText="¼ì²éºóÌ¨ºó¿ÉÒÔÊ¹ÓÃ!"
                        return true;
                    }else{
                        //505
-                       usernameMsgSpan.innerText="ä¸å¯ä½¿ç”¨,è´¦å·å·²ç»å­˜åœ¨!"
+                       usernameMsgSpan.innerText="²»¿ÉÊ¹ÓÃ,ÕËºÅÒÑ¾­´æÔÚ!"
                        return false;
                    }
                 }
@@ -79,33 +79,33 @@
         }
 
 
-        // æ ¡éªŒå¯†ç çš„æ–¹æ³•
+        // Ğ£ÑéÃÜÂëµÄ·½·¨
         function checkUserPwd(){
-            // å®šä¹‰æ­£åˆ™
+            // ¶¨ÒåÕıÔò
             var passwordReg=/^[0-9]{6}$/
             var userPwd =document.getElementById("userPwdInput").value
             var userPwdMsgSpan =document.getElementById("userPwdMsg")
             if(!passwordReg.test(userPwd)){
-                userPwdMsgSpan.innerText="ä¸åˆæ³•"
+                userPwdMsgSpan.innerText="²»ºÏ·¨"
                 return false
             }
             userPwdMsgSpan.innerText="OK"
             return true
         }
 
-        // æ ¡éªŒå¯†ç çš„æ–¹æ³•
+        // Ğ£ÑéÃÜÂëµÄ·½·¨
         function checkReUserPwd(){
-            // å®šä¹‰æ­£åˆ™
+            // ¶¨ÒåÕıÔò
             var passwordReg=/^[0-9]{6}$/
             var userPwd =document.getElementById("userPwdInput").value
             var reUserPwd =document.getElementById("reUserPwdInput").value
             var reUserPwdMsgSpan =document.getElementById("reUserPwdMsg")
             if(!passwordReg.test(userPwd)){
-                reUserPwdMsgSpan.innerText="ä¸åˆæ³•"
+                reUserPwdMsgSpan.innerText="²»ºÏ·¨"
                 return false
             }
             if(userPwd != reUserPwd){
-                reUserPwdMsgSpan.innerText="ä¸ä¸€è‡´"
+                reUserPwdMsgSpan.innerText="²»Ò»ÖÂ"
                 return false
 
             }
@@ -113,7 +113,7 @@
             return true
         }
 
-        //è¡¨å•æäº¤æ—¶ç»Ÿä¸€æ ¡éªŒ
+        //±íµ¥Ìá½»Ê±Í³Ò»Ğ£Ñé
         function checkForm(){
             return checkUsername() && checkUserPwd() && checkReUserPwd()
         }
@@ -123,26 +123,26 @@
     </script>
 </head>
 <body>
-<h1 class="ht">æ¬¢è¿ä½¿ç”¨æ—¥ç¨‹ç®¡ç†ç³»ç»Ÿ</h1>
-<h3 class="ht">è¯·æ³¨å†Œ</h3>
+<h1 class="ht">»¶Ó­Ê¹ÓÃÈÕ³Ì¹ÜÀíÏµÍ³</h1>
+<h3 class="ht">Çë×¢²á</h3>
 <form method="post" action="/schedule/register" onsubmit="return checkForm()">
     <table class="tab" cellspacing="0px">
         <tr class="ltr">
-            <td>è¯·è¾“å…¥è´¦å·</td>
+            <td>ÇëÊäÈëÕËºÅ</td>
             <td>
                 <input class="ipt" id="usernameInput" type="text" name="username" onblur="checkUsername()">
                 <span id="usernameMsg" class="msg"></span>
             </td>
         </tr>
         <tr class="ltr">
-            <td>è¯·è¾“å…¥å¯†ç </td>
+            <td>ÇëÊäÈëÃÜÂë</td>
             <td>
                 <input class="ipt" id="userPwdInput" type="password" name="userPwd" onblur="checkUserPwd()">
                 <span id="userPwdMsg" class="msg"></span>
             </td>
         </tr>
         <tr class="ltr">
-            <td>ç¡®è®¤å¯†ç </td>
+            <td>È·ÈÏÃÜÂë</td>
             <td>
                 <input class="ipt" id="reUserPwdInput" type="password" onblur="checkReUserPwd()">
                 <span id="reUserPwdMsg" class="msg"></span>
@@ -150,9 +150,9 @@
         </tr>
         <tr class="ltr">
             <td colspan="2" class="buttonContainer">
-                <input class="btn1" type="submit" value="æ³¨å†Œ">
-                <input class="btn1" type="reset" value="é‡ç½®">
-                <button class="btn1"><a  href="/schedule/login.html">å»ç™»å½•</a></button>
+                <input class="btn1" type="submit" value="×¢²á">
+                <input class="btn1" type="reset" value="ÖØÖÃ">
+                <button class="btn1"><a  href="/schedule/login.html">È¥µÇÂ¼</a></button>
             </td>
         </tr>
     </table>

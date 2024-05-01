@@ -23,6 +23,8 @@ public class UserDaoImpl extends BaseDao implements UserDao{
         return sysUserList.get(0);
     }
 
+
+
     @Override
     public int insertSysUser(String username, String userPwd) {
         //1.编写sql语句
@@ -30,5 +32,11 @@ public class UserDaoImpl extends BaseDao implements UserDao{
         //2.执行即可
         int rows = baseUpdate(sql, username, userPwd);
         return rows;
+    }
+
+    @Override
+    public int queryUserNameCount(String username) {
+        String sql = "select count(*) from sys_user where username = ?;";
+        return baseQueryObject(Long.class,sql,username).intValue();
     }
 }

@@ -12,13 +12,15 @@ import java.util.List;
  */
 public interface ScheduleDao {
 
-    List<SysSchedule> queryList(Integer uid);
+    List<SysSchedule> queryList(Integer uid, int i, int sizeNumber);
 
     void insertSchedule(String title, Integer uid);
 
     void deleteById(Integer sid);
 
-
+    SysSchedule queryById(String sid);
 
     void updateById(String sid, String title, Integer completed);
+
+    Long queryCountByUid(Integer uid);
 }

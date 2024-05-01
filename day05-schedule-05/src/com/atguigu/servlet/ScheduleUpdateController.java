@@ -1,5 +1,7 @@
 package com.atguigu.servlet;
 
+import com.atguigu.pojo.SysUser;
+import com.atguigu.service.ScheduleService;
 import com.atguigu.service.impl.ScheduleServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,26 +12,25 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @classname javawedTest
- * @Auther d3Lap1ace
- * @Time 30/4/2024 16:46 周二
- * @description
- * @Version 1.0
- * From the Laplace Demon
+ * projectName: com.atguigu.servlet
+ *
+ * @author: 赵伟风
+ * description:
  */
-
 @WebServlet("/schedule/update")
 public class ScheduleUpdateController extends HttpServlet {
 
     @Override
-    public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //1.接收参数
         String title = req.getParameter("title");
-        String uid = req.getParameter("uid");
+        String sid = req.getParameter("sid");
         Integer completed = Integer.parseInt(req.getParameter("completed"));
-
-        ScheduleServiceImpl scheduleService = new ScheduleServiceImpl();
-        scheduleService.updateSchedule(uid,title,completed);
-
+        //2.调用业务
+        ScheduleService scheduleService = new ScheduleServiceImpl();
+        //uid
+        scheduleService.updateSchedule(sid,title,completed);
+        //3.响应结果
         resp.sendRedirect(req.getContextPath()+"/schedule/show");
     }
 }

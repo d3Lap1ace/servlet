@@ -12,11 +12,15 @@ import java.util.List;
  */
 public interface ScheduleService {
 
-    List<SysSchedule> showList(Integer uid);
+    List<SysSchedule> showList(Integer uid, String page, String size);
 
     void addSchedule(String title, Integer uid);
 
     void delSchedule(Integer sid);
 
-    void updateSchedule(String uid, String title, Integer completed);
+    SysSchedule detailSchedule(String sid);
+
+    void updateSchedule(String sid, String title, Integer completed);
+
+    Long findCount(Integer uid);
 }

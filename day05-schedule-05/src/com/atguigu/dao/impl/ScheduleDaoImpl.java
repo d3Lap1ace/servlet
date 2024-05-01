@@ -15,10 +15,10 @@ import java.util.List;
 public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
 
     @Override
-    public List<SysSchedule> queryList(Integer uid) {
+    public List<SysSchedule> queryList(Integer uid, int offset, int sizeNumber) {
         //查询用户的! 不是查询全部的!
-        String sql ="select * from sys_schedule where uid = ? ;";
-        return baseQuery(SysSchedule.class,sql,uid);
+        String sql ="select * from sys_schedule where uid = ? limit ?,? ;";
+        return baseQuery(SysSchedule.class,sql,uid,offset,sizeNumber);
     }
 
     @Override
@@ -34,10 +34,21 @@ public class ScheduleDaoImpl extends BaseDao implements ScheduleDao {
     }
 
     @Override
-    public void updateById(String sid, String title, Integer completed) {
-        ScheduleDao scheduleDao = new ScheduleDaoImpl();
-        scheduleDao.updateById(sid,title,completed);
+    public SysSchedule queryById(String sid) {
+        String sql ="select * from sys_schedule where sid = ? ;";
+        List<SysSchedule> sysScheduleList = baseQuery(SysSchedule.class, sql, sid);
+        return sysScheduleList.size()>0?sysScheduleList.get(0):null;
     }
 
+    @Override
+    public void updateById(String sid, String title, Integer completed) {
+        String sql = "update sys_schedule set title = ? , completed = ? where sid = ? ";
+        baseUpdate(sql,title,completed,sid);
+    }
 
+    @Override
+    public Long queryCountByUid(Integer uid) {
+        String sql = "select count(*) from sys_schedule where uid = ? ;";
+        return baseQueryObject(Long.class,sql,uid);
+    }
 }

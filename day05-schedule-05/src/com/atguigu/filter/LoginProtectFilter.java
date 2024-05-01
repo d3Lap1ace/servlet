@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author: 赵伟风
  * description:
  */
-@WebFilter({"/showSchedule.jsp","/schedule/show"})
+@WebFilter({"/showSchedule.jsp","/schedule/*"})
 public class LoginProtectFilter implements Filter {
 
 

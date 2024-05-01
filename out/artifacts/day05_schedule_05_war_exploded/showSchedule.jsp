@@ -66,8 +66,8 @@
                  <td>${schedule.title}</td>
                  <td>${schedule.completed==0?'未完成':'已完成'}</td>
                  <td class="buttonContainer">
-                     <button class="btn1">删除</button>
-                     <button class="btn1">修改</button>
+                     <button class="btn1" onclick="delSchedule(${schedule.sid})">删除</button>
+                     <button class="btn1" onclick="editSchedule(${schedule.sid})">修改</button>
                  </td>
              </tr>
          </c:forEach>
@@ -83,9 +83,18 @@
 
    </tbody>
    <tfoot>
+
        <tr class="ltr buttonContainer" >
            <td colspan="4">
-               <button class="btn1">新增日程</button>
+             <c:forEach begin="1" end="${totalPage}" var="page">
+                 <a href="/schedule/schedule/show?page=${page}" style="border:  1px solid blue;padding: 2px; margin:4px;text-decoration: none">${page}</a>
+             </c:forEach>
+           </td>
+
+       </tr>
+       <tr class="ltr buttonContainer" >
+           <td colspan="4">
+               <button class="btn1" onclick="addSchedule()">新增日程</button>
            </td>
 
        </tr>
@@ -95,7 +104,21 @@
 
 
 <script>
+   function addSchedule(){
+       var title = prompt("输入学习计划:");
+       location.href = "/schedule/schedule/add?title="+title;
+   }
 
+   function delSchedule(sid){
+       if(confirm("是否要删除sid="+sid+"学习计划?")){
+           //删除
+           location.href = "/schedule/schedule/del?sid="+sid;
+       }
+   }
+
+   function editSchedule(sid){
+       location.href = "/schedule/schedule/detail?sid="+sid;
+   }
 </script>
 
 </body>

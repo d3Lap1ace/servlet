@@ -23,9 +23,9 @@ public class DeleteCookieController extends HttpServlet {
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie cookie = new Cookie("account", "root");
-        cookie.setMaxAge(0);
-        resp.addCookie(cookie);
-        resp.getWriter().print("cookie remove success!!!!!");
+        Cookie cookie = new Cookie("account", "root"); // 生成一瓜cookie
+        cookie.setMaxAge(0);                                        // 设置最大周期
+        resp.addCookie(cookie);                                     //添加cookie到头文件
+        resp.getWriter().print("cookie fasibg");
     }
 }

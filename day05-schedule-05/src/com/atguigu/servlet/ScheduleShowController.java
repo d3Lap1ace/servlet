@@ -28,11 +28,16 @@ public class ScheduleShowController extends HttpServlet {
     public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //2. 获取请求参数
         SysUser sysUser = (SysUser) req.getSession().getAttribute("user");
+        String page = req.getParameter("page");
+        String size = req.getParameter("size");
         //3. 调用业务层
         ScheduleService scheduleService = new ScheduleServiceImpl();
-        List<SysSchedule> sysSchedules = scheduleService.showList(sysUser.getUid());
+        List<SysSchedule> sysSchedules = scheduleService.showList(sysUser.getUid(),page,size);
+        Long count = scheduleService.findCount(sysUser.getUid());
         //4. 响应结果( 字符串 | 字节文件 | html[转发|重定向])
+        int totalPage = (int) Math.ceil(count / 3.0);
         req.setAttribute("sysSchedules",sysSchedules);
+        req.setAttribute("totalPage",totalPage);
         req.getRequestDispatcher("/showSchedule.jsp").forward(req,resp);
     }
 }

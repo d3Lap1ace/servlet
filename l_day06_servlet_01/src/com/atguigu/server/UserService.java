@@ -12,4 +12,6 @@ public interface UserService {
     int login(String username,String userPwd);
 
     boolean register(String username,String userPwd);
+
+    boolean check(String username);
 }

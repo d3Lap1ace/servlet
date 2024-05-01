@@ -1,6 +1,7 @@
 package com.atguigu.servlet;
 
 import com.atguigu.pojo.SysUser;
+import com.atguigu.service.ScheduleService;
 import com.atguigu.service.impl.ScheduleServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,22 +12,25 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @classname javawedTest
- * @Auther d3Lap1ace
- * @Time 30/4/2024 14:46 周二
- * @description
- * @Version 1.0
- * From the Laplace Demon
+ * projectName: com.atguigu.servlet
+ *
+ * @author: 赵伟风
+ * description:
  */
-
 @WebServlet("/schedule/add")
 public class ScheduleAddController extends HttpServlet {
+
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //1.接收参数
         String title = req.getParameter("title");
-        SysUser user = (SysUser)req.getSession().getAttribute("user");
-        ScheduleServiceImpl scheduleService = new ScheduleServiceImpl();
+        //todo 修改登录拦截器 @WebFilter({"/showSchedule.jsp","/schedule/*"})
+        SysUser user = (SysUser) req.getSession().getAttribute("user");
+        //2.调用业务
+        ScheduleService scheduleService = new ScheduleServiceImpl();
+        //uid
         scheduleService.addSchedule(title,user.getUid());
-        resp.sendRedirect(req.getContextPath()+"/schedule/slow");
+        //3.响应结果
+        resp.sendRedirect(req.getContextPath()+"/schedule/show");
     }
 }
