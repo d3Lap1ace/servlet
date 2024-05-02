@@ -2,12 +2,12 @@
   <artifact type="exploded-war" name="l_day07_filter_01:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/l_day07_filter_01_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="l_day07_filter/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="l_day07_filter" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="l_day07_filter/web/Web" />
     </root>
   </artifact>
 </component>
