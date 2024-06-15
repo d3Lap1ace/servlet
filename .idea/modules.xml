@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/day05-schedule-05/day05-schedule-05.iml" filepath="$PROJECT_DIR$/day05-schedule-05/day05-schedule-05.iml" />
       <module fileurl="file://$PROJECT_DIR$/day08-servlet-ajax-01/day08-servlet-ajax-01.iml" filepath="$PROJECT_DIR$/day08-servlet-ajax-01/day08-servlet-ajax-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javawedTest.iml" filepath="$PROJECT_DIR$/javawedTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day05_servlet_homework/l_day05_servlet_homework.iml" filepath="$PROJECT_DIR$/l_day05_servlet_homework/l_day05_servlet_homework.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day05_servlet_homework2/l_day05_servlet_homework2.iml" filepath="$PROJECT_DIR$/l_day05_servlet_homework2/l_day05_servlet_homework2.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day06_cookie_01/l_day06_cookie_01.iml" filepath="$PROJECT_DIR$/l_day06_cookie_01/l_day06_cookie_01.iml" />
@@ -15,10 +16,8 @@
       <module fileurl="file://$PROJECT_DIR$/l_day07_session/l_day07_session.iml" filepath="$PROJECT_DIR$/l_day07_session/l_day07_session.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day08_ajax/l_day08_ajax.iml" filepath="$PROJECT_DIR$/l_day08_ajax/l_day08_ajax.iml" />
       <module fileurl="file://$PROJECT_DIR$/l_day08_schedule/l_day08_schedule.iml" filepath="$PROJECT_DIR$/l_day08_schedule/l_day08_schedule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/servlet.iml" filepath="$PROJECT_DIR$/servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/x_reone_requset_response_01/x_reone_requset_response_01.iml" filepath="$PROJECT_DIR$/x_reone_requset_response_01/x_reone_requset_response_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/x_reone_servlert_01/x_reone_servlert_01.iml" filepath="$PROJECT_DIR$/x_reone_servlert_01/x_reone_servlert_01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/x_retwo_servlet_01/x_retwo_servlet_01.iml" filepath="$PROJECT_DIR$/x_retwo_servlet_01/x_retwo_servlet_01.iml" />
     </modules>
   </component>
 </project>
