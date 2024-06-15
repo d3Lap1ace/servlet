@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="x_retwo_servlet_01:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/x_retwo_servlet_01_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="x_retwo_servlet_01" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="druid-1.2.9-javadoc" />
+          <element id="library" level="project" name="jackson-annotations-2.13.2" />
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="lombok-1.18.24" />
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.5-migrated-0.0.1" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="x_retwo_servlet_01/web/Web" />
+    </root>
+  </artifact>
+</component>
